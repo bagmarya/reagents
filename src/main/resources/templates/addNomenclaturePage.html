@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить расходный материал</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="~{menu :: copy}">...</div>
+<h1>Добавить расходный материал</h1>
+<p>* - обязательное поле</p>
+<form th:action="@{/addNomenclature}" th:object="${nomenclatureForm}" method="POST">
+
+    Наименование: *
+    <input type="text" th:field="*{name}" />
+    <br/>
+    Нормативный документ:
+    <input type="text" th:field="*{normativeDoc}" />
+    <br/>
+    Требования:
+    <input type="text" th:field="*{requirements}" />
+    <br/>
+    Единица измерения: *
+    <input type="text" th:field="*{unit}" />
+    <br/>
+    Цена:
+    <input type="text" th:field="*{price}" />
+    <br/>
+    Примечание:
+    <input type="text" th:field="*{description}" />
+    <br/>
+    <input type="submit" value="Создать" />
+</form>
+</body>
+</html>

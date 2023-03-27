@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="~{menu :: copy}">...</div>
+<h1>Список пользователей</h1>
+<table>
+    <tr>
+        <th>Login</th>
+        <th>Name</th>
+        <th>Role</th>
+    </tr>
+    <tr th:each="accountInfo:${accountInfos}">
+        <td th:utext="${accountInfo.login}">..</td>
+        <td th:utext="${accountInfo.name}">..</td>
+        <td th:utext="${accountInfo.role}">..</td>
+    </tr>
+</table>
+</body>
+</html>

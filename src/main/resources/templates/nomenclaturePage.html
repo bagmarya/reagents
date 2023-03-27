@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Номенклатура</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="~{menu :: copy}">...</div>
+<h1>Номенклатура</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Наименование</th>
+        <th>Нормативный документ</th>
+        <th>Требования</th>
+        <th>Единица</th>
+        <th>Цена</th>
+        <th>Примечание</th>
+    </tr>
+    <tr th:each="nomenclatureInfo:${nomenclatureInfos}">
+        <td th:utext="${nomenclatureInfo.id}">..</td>
+        <td th:utext="${nomenclatureInfo.name}">..</td>
+        <td th:utext="${nomenclatureInfo.normativeDoc}">..</td>
+        <td th:utext="${nomenclatureInfo.requirements}">..</td>
+        <td th:utext="${nomenclatureInfo.unit}">..</td>
+        <td th:utext="${nomenclatureInfo.price}">..</td>
+        <td th:utext="${nomenclatureInfo.description}">..</td>
+    </tr>
+</table>
+<a href="addNomenclature">Добавить</a>
+</body>
+</html>
